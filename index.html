@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="朱修毅">
+    <meta name="description" content="行事曆">
+    <!---<script src="main.js"></script>--->
+    <style>
+        @font-face {
+            font-family: "蘋方-繁1";
+            src: url(applegothic.ttf);
+        }
+        @font-face {
+            font-family: "蘋方-繁2";
+            src: url(applegothic.woff);
+        }
+        .adde {
+            
+            border-radius: 6px;
+            background-color: #1f2029;
+            color: white;
+            box-shadow: 0 4px 8px 0 rgba(21, 21, 21, .2);
+            height: 50px;
+            padding: 10px 10px 10px 10px;
+
+            
+        }
+        input {
+            display: inline-flex;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 13px 20px;
+            padding-left: 30px;
+            height: 30px;
+            width: 300px;
+            font-weight: 500;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0.5px;
+            outline: none;
+            background-color: #1f2029;
+            -webkit-text-fill-color: #fff;
+            border: none;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+            box-shadow: 0 4px 8px 0 rgba(21, 21, 21, .2);
+        }
+        .delbutton {
+            background-color:#1f2029;
+            color: #fff;
+            border-radius: 6px;
+            padding: 10px 15px;
+            margin: 10px;
+        }
+        table {
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 35px;
+        }
+
+        th {
+            border: 5px rgb(0, 0, 0) solid;
+            padding: 10px 15px;
+            width: 5em;
+        }
+
+        tr,
+        td {
+            text-align: center;
+            border: 5px rgb(0, 0, 0) solid;
+            padding: 10px 15px;
+            width: 10rem;
+        }
+    </style>
+    <title>行事曆</title>
+</head>
+
+<body bgcolor="">
+    <h1 style="font-size: 50px; text-align: center;">行事曆</h1>
+
+    <div align="center" style="margin-left: 40px;">
+        <input id="time" placeholder="時間">
+        <input id="place" placeholder="地點">
+        <input id="description" placeholder="描述">
+        <button class="adde" type="button" onclick="addRow()">添加</button>
+    </div>
+    <noscript>
+        <p style="font-size: 100px">此網站不支援Javascript</p>
+    </noscript>
+    <div align="center" style="margin-top: 50px">
+        <table id="table" style="border: 5px gold solid;">
+            <thead>
+                <tr>
+                    <th>時間</th>
+                    <th>地點</th>
+                    <th>描述</th>
+                    <th>可用操作</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td>5/5 12點 </td>
+                    <td>家</td>
+                    <td>吃飯 </td>
+                    <td><button class="delbutton" type="button" onclick="del(this)">刪除</button></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <script src="main.js"></script>
+    <script type="text/javascript">
+        console.log(localStorage)
+    </script>
+</body>
+
+</html>
