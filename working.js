@@ -8,6 +8,7 @@ function del(obj){
     let ttable = document.getElementById("table")
     ttable.deleteRow(inde);
 }
+
 function edit(obj){
     var inde = obj.parentNode.parentNode.rowIndex;
     let ttable = document.getElementById("table")
@@ -23,5 +24,4 @@ function addRow(){
     time.value = "";
     place.value = "";
     description.value = "";
-
 }
