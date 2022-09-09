@@ -9,23 +9,25 @@
     <!---<script src="main.js"></script>--->
     <style>
         @font-face {
-            font-family: "蘋方-繁1";
-            src: url(applegothic.ttf);
+            font-family: "apple";
+            src: url("{{ url_for('static', filename='fonts/applegothic.ttf') }}");
         }
         @font-face {
             font-family: "蘋方-繁2";
-            src: url(applegothic.woff);
+            src: url('applegothic.ttf');
+        }
+        body {
+            font-family: "apple";
         }
         .adde {
-            
+
             border-radius: 6px;
             background-color: #1f2029;
             color: white;
             box-shadow: 0 4px 8px 0 rgba(21, 21, 21, .2);
-            height: 50px;
+            height: 56px;
             padding: 10px 10px 10px 10px;
 
-            
         }
         input {
             display: inline-flex;
@@ -49,17 +51,33 @@
             transition: all 200ms linear;
             box-shadow: 0 4px 8px 0 rgba(21, 21, 21, .2);
         }
+
         .delbutton {
-            background-color:#1f2029;
+            background-color: #1f2029;
             color: #fff;
             border-radius: 6px;
             padding: 10px 15px;
             margin: 10px;
         }
+
+        @keyframes rot {
+            0% {
+                transform: rotate(-3600deg);
+
+            }
+
+            100% {
+                transform: rotate(7200deg);
+            }
+        }
+
         table {
+            animation: rot;
+            animation-duration: 1s;
             text-align: center;
             border-collapse: collapse;
             font-size: 35px;
+
         }
 
         th {
@@ -103,11 +121,11 @@
                 </tr>
             </thead>
             <tbody id="tbody">
-                
+
             </tbody>
         </table>
     </div>
-    <script src = "{{ url_for('static', filename='js/working.js')}}""></script>
+    <script src="../static/js/working.js"></script>
 </body>
 
 </html>
