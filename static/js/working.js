@@ -20,9 +20,13 @@ function upload() {
     let time = document.getElementById("time")
     let place = document.getElementById("place")
     let description = document.getElementById("description")
-    url = '/schedule'
+    url = '/update'
     var xhr = new XMLHttpRequest();
-    let datas = [time.value.toString(), place.value.toString(), description.value.toString()]
+    let datas = {
+        'time': time.value.toString(),
+        'place': place.value.toString(),
+        'description': description.value.toString()
+    }
     console.log('============================')
     console.log(typeof datas)
     console.log(datas)
