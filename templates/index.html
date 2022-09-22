@@ -59,25 +59,37 @@
             padding: 10px 15px;
             margin: 10px;
         }
-
+        body {
+            animation: rot;
+            animation-duration: 1s;
+            position: relative;
+        }
         @keyframes rot {
             0% {
-                transform: rotate(-3600deg);
-
+                left: -50%;
+                opacity: 0.3;
             }
-
-            100% {
-                transform: rotate(7200deg);
+            60% {
+                left: 10%;
+                
+            }
+            70% {
+                left: 5%;
+            }
+            80% {
+                left: 7.5%;
+            }
+            100%{
+                left: 0%;
+                opacity: 1;
             }
         }
 
         table {
-            animation: rot;
-            animation-duration: 1s;
+            
             text-align: center;
             border-collapse: collapse;
-            font-size: 35px;
-
+            
         }
 
         th {
@@ -85,7 +97,12 @@
             padding: 10px 15px;
             width: 5em;
         }
-
+        thead {
+            font-size: 35px;
+        }
+        tbody {
+            font-size: 30px;
+        }
         tr,
         td {
             text-align: center;
@@ -104,10 +121,12 @@
     <h1 style="font-size: 50px; text-align: center;">行事曆</h1>
 
     <div align="center" style="margin-left: 40px;">
-        <input id="time" placeholder="時間">
-        <input id="place" placeholder="地點">
-        <input id="description" placeholder="描述">
-        <button class="adde" type="button" onclick="addRow()">添加</button>
+        <form method="POST">
+            <input type="text" name="time" id="time" placeholder="時間">
+            <input type="text" name="place" id="place" placeholder="地點">
+            <input type="text" name="description" id="description" placeholder="描述">
+            <button class="adde" type="submit">添加</button>
+        </form>
     </div>
 
     <div align="center" style="margin-top: 50px">
@@ -121,11 +140,11 @@
                 </tr>
             </thead>
             <tbody id="tbody">
-
+                {% block content %}
+                {% endblock %}
             </tbody>
         </table>
     </div>
-    <script src="../static/js/working.js"></script>
 </body>
 
 </html>
