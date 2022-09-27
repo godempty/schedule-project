@@ -7,6 +7,10 @@ myclient = pymongo.MongoClient('mongodb+srv://godempty:momo0305@cluster0.i5qta6c
 mydb = myclient['Schedule']
 datadb = mydb['datas']
 
+@app.route('/')
+def init():
+    return redirect('/schedule')
+
 @app.route('/schedule', methods=['POST','GET'])
 def show():
     if request.method == 'POST':
